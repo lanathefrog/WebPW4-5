@@ -1,0 +1,765 @@
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    
+    
+    }
+    header{
+        background-color: #313131;
+        color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        position:fixed;
+        width: 100%;
+        opacity: 90%;
+        text-align: left;
+        --triangle-height: 20px;
+        z-index: 1; 
+    }
+    
+    
+
+    .button:hover{
+        background-color: #e38741;
+        border-bottom: #e7a252 solid 6px;
+        cursor: pointer;
+    }
+.content{
+    display: flex;
+    flex-direction: column;
+    columns: 2;
+    padding: 0 calc(15px + 260px) 0 15px;
+
+  padding-top: var(--header-height);
+  
+}
+
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+}
+
+#header-top{
+    margin-bottom: 1.5%;
+    color: gray;
+    font-size: 15px;
+    text-align: left;
+    display: flex;
+    padding-right: 260px;
+    align-items: center;
+
+}
+
+@media (max-width: 660px) {
+    #header-top{
+        padding-right: calc(10px + 260px);
+    }
+    
+}
+#text-top-header{
+    flex: 9;
+    display: flex;
+}
+
+#schedule{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#header-bottom{
+    margin-top: 15px;
+    color: white;
+  text-align: left;
+  align-items: center;
+ display: flex;
+
+
+    padding-right: 260px;
+
+
+}
+
+#text-bottom-header{
+    flex: 9;
+    display: flex;
+}
+#header-bottom button{
+    display: none;
+    width: 50px; 
+    height: 30px; 
+    margin-left: auto;
+  
+
+}
+
+
+.button {
+   
+    right: 0;
+    top: 0;
+    margin-top: 0.5%;
+    margin-right: 2%;
+    
+    color: white;
+    background-color: #e7a252;
+    border: #e7a252 solid 1px;
+    border-radius: 10px;
+    margin-left: 2%;
+    flex: 1.5;
+    height: 30px;
+    border-bottom: #e38741 solid 6px;
+}
+.left-side-header{
+    padding: 15px;
+}
+
+#label{ 
+text-align: center;
+font-size: 25px; 
+padding: 25% 2% 2% 2%;
+float: left;
+z-index: 3;
+color: rgb(255, 255, 255);
+align-items: center;
+flex: 10;
+}
+#label-3{
+    position: absolute;
+    top: 100%;;
+    display: flex;
+    height: var(--triangle-height);
+    width: 100%;
+    color: rgb(255, 255, 255);
+    rotate: 180deg;
+}
+.logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e38741;
+    width: 100px;
+    margin-left: 15px;
+    height: 100%;
+}
+ 
+#content-name{
+    margin-top: 3%;
+    text-align: center;
+    font-size: 23px;
+    justify-content: space-between;
+  
+
+}
+ 
+#quantity-main{
+    margin-left: 3%;
+    background-color: #e7a252;
+    border-radius: 10px;
+    padding: 0.5%;
+    font-size: 20px;
+    color: white;
+}
+
+.single-pizza{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    columns: 1;
+    background-color: white;
+    padding: 2%;
+    width:230px;
+    margin: 3%;
+}
+
+.pizza-image img {
+    width: 100%;
+    height: auto;
+}
+
+.weight, .size {
+    display: flex;
+   
+    
+}
+
+.weight-size{
+    display: flex;
+  justify-content: space-evenly;
+    margin-top: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.size img{
+   
+    margin-right: 14px;
+    
+}
+.weight img{
+   
+    margin-right: 10px;
+    
+}
+.single-pizza {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pizza-name{
+    color: #e38741;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.pizza-type{
+    color: #b5b5b5;
+    font-size: 14px;
+    margin-bottom: 1%;
+    
+}
+
+.pizza-description{
+ 
+    font-size: 16px;
+    margin-bottom: 2%;
+}
+.pizza-price{
+    font-size: 26px;
+    font-weight: bold;
+    color: #000000;
+
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.grn{
+    font-size: 18px;
+}
+
+.single-pizza button{
+    
+    border-radius: 10px;
+   
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5%;
+}
+
+.pizzas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#cart{
+    --cart-width: 25%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    height: 100%;
+    width: 260px;
+    z-index: 2;
+    background-color: rgb(232, 232, 232);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+#cart-main-content{
+    max-height: 550px; 
+    overflow-y: auto; 
+    overflow-x: hidden
+}
+#cart-label{ 
+   font-weight: bold;
+  
+    
+
+}
+
+#cart-top-pannel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 5% 2% 5% 5%;
+   background-color: rgb(255, 255, 255);
+   flex-wrap: wrap;
+
+}
+
+
+#cart-number{
+   background-color: #e7a252;
+    color: white;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 2%;
+   margin-left: 9px;
+ 
+
+}
+
+#cart-name{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+
+#clear{
+    color: #ababab;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: right;
+  
+
+}
+
+.cart-pizza {
+    display: flex;
+    position: relative;
+    padding: 4%;
+    margin: 2%;
+
+
+}
+
+.cart-pizza-minus, .cart-pizza-plus, .cart-pizza-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+cursor: pointer;
+ padding: 13px;
+
+   
+}
+
+.cart-pizza-minus{
+    
+    cursor: pointer;
+  background: linear-gradient(to bottom, rgb(247, 140, 140), rgb(204, 30, 30));
+  
+    border-bottom: rgb(138, 12, 12) solid 4px;
+}
+
+
+.cart-pizza-plus{
+    
+    cursor: pointer;
+  border-bottom: rgb(12, 96, 33) solid 4px;
+  background: linear-gradient(to bottom, rgb(118, 217, 144), rgb(8, 136, 46));
+   
+}
+
+
+.cart-pizza-name{
+    font-size: 16px;
+    font-weight: bold;
+
+    color:#e38741;
+}
+
+
+.cart-pizza-small-text{
+    font-size: 14px;
+    margin-bottom: 5px;
+ 
+    margin-left: 5px;
+margin-top: 5px;
+    color: #393939;
+
+}
+
+.cart-pizza-size-and-weight{
+    
+    font-size: 10px;
+ margin: 5% 0 5% 0;
+
+    padding-left: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+
+}
+.cart-pizza-size, .cart-pizza-weight {
+    display: flex;
+    align-items: center;
+}
+
+
+.cart-pizza-price{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    justify-content: center;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+}
+
+.cart-pizza-image {
+    position: absolute;
+    right:-20%;
+    top: 0;
+
+    width: 40%;
+   
+}
+.cart-pizza-details {
+    padding-right: 15%; 
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  margin-right: 15px;
+  margin-left: 10px;;
+
+}
+
+.cart-pizza-delete{
+    background-color: rgb(255, 255, 255);
+color: #e98b21;
+border-bottom: rgb(190, 190, 190) solid 4px;
+background: linear-gradient(to bottom, rgba(255,255,255,1), rgb(210, 210, 210));
+   
+
+}
+
+.cart-pizza-image img {
+    width: 100%;
+    height: 100%;
+}
+.cart-pizza-size{
+    margin-right: 10%;
+  
+}
+
+.cart-pizza-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    margin-bottom: 5%;
+
+}
+
+.cart-pizza-quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  margin: 0 10px 0 10px;
+    font-size: 18px;
+    color: #000000;
+}
+
+
+.cart-pizza-bottom-text{
+ 
+    display: flex;
+     display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+    width: 110%;
+
+}
+
+#cart-bottom-pannel{
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+    align-items: center;
+    padding: 5% 2% 5% 1%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5%;
+    margin: 0;
+
+}
+
+#cart-total{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5%;
+
+}
+
+#total-label{
+    padding-left: 3%;
+}
+#total-price{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    
+}
+
+#cart-bottom-pannel button{
+    background-color: #e7a252;
+    color: white;
+    border-radius: 10px;
+    
+    font-size: 16px;
+  
+    margin-top: 5%;
+    
+    width: 100%;
+}
+
+.pizza-label-new, .pizza-label-popular {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.pizza-label-new {
+    background-color: #309e30;
+}
+.pizza-label-popular {
+    background-color: #8c31c1;
+}
+
+#cart-bottom-pannel button:hover{
+    background-color: #e38741;
+    border-bottom: #e7a252 solid 6px;
+
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    flex-wrap: wrap;
+}
+
+.cheap-info, .pricy-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    color:#e7a252;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+
+
+#header-bottom button{
+justify-content: right;
+
+}
+
+
+
+@media (max-width: 600px) {
+    .tab {
+        padding: 10px;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 670px) {
+    #header-top button{
+        display: none;
+    }
+    
+    #content-name{
+        margin-top: 7%;
+    
+    }
+
+    #text-top-header{
+        flex-direction: column;
+    }
+
+    #header-bottom button {
+        display: inline-flex; 
+      right: 0;
+      flex: 0.3;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+    }
+
+#header-bottom{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 260px;
+}
+    #schedule{
+        display: none;
+    }
+    #dostavka{
+        display: none;
+    }
+
+    #text-bottom-header{
+        display: none;
+    }
+
+   
+   
+}
+
+.tab:hover {
+    background:#e7a252;
+    color: white;
+}
+
+.tab:active {
+    background: orange;
+    color: white;
+}
+
+.bottom-logo{
+    
+        position: fixed;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #e38741;
+        width: 100px;
+        margin-left: 15px;
+        height: 100%;
+        
+        
+    
+}
+
+
+
+.badge {
+    color: white;
+    background-color:#e98b21;
+    position: fixed;
+   bottom: 0px;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 80%;
+    justify-content: center;
+    font-size: 14px;
+    width: 100px;
+   margin-left: 15px;
+    padding: 3%;
+   
+}
+
+.badge .label, #discount{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+   
+}
+
+#discount{
+   
+    margin-top: 10%;
+
+}
+
+#label-3-bottom{
+    position: absolute;
+    top: -6%;;
+    display: flex;
+    align-items:flex-end;
+    width: 100%;
+   
+}
+
+footer{
+    background-color: #dadada;
+    position: static; 
+    width: 100%;
+    height: 70px;
+    color: rgb(133, 133, 133);
+    text-align: center;
+ 
+    font-size: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#text-in-footer{
+    margin-right: calc(3% + 260px);
+    margin-left: calc(3% + 115px);
+}
+
+#notification-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 1000;
+}
+
+#notification-panel.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#notification-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+    display: none;
+}
