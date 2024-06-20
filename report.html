@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Order Report</title>
+    <link href="https://cdn.webdatarocks.com/latest/webdatarocks.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet">
+    <style>
+     
+    </style>
+</head>
+<body>
+    <div id="report-container"></div>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.toolbar.min.js"></script>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalSum = cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            const reportData = cartData.map(item => ({
+                title: item.title,
+                size: item.size === 'small' ? 'Мала' : 'Велика',
+                quantity: item.quantity,
+                price: item.price,
+                total: item.price * item.quantity,
+                percentage: ((item.price * item.quantity) / totalSum * 100).toFixed(2) + ' %'
+            }));
+
+            reportData.push({
+                title: "Загальна кількість",
+                size: "⠀",
+                quantity: cartData.reduce((sum, item) => sum + item.quantity, 0),
+                price: " ",
+                total: totalSum,
+                percentage: "100 %"
+            });
+
+            new WebDataRocks({
+                container: "#report-container",
+                toolbar: true,
+                report: {
+                    dataSource: {
+                        data: reportData
+                    },
+                    slice: {
+                        rows: [
+                            {
+                                uniqueName: "title",
+                                caption: "Назва піци"
+                            },
+                            {
+                                uniqueName: "size",
+                                caption: "Розмір"
+                            }
+                        ],
+                        columns: [
+                            {
+                                uniqueName: "Measures",
+                                caption: "Показники"
+                            }
+                        ],
+                        measures: [
+                            {
+                                uniqueName: "quantity",
+                                aggregation: "sum",
+                                caption: "Кількість піц"
+                            },
+                            {
+                                uniqueName: "price",
+                                aggregation: "none",
+                                caption: "Ціна за одну (грн)"
+                            },
+                            {
+                                uniqueName: "total",
+                                aggregation: "sum",
+                                caption: "Ціна за всі (грн)"
+                            },
+                            {
+                                uniqueName: "percentage",
+                                aggregation: "none",
+                                caption: "Відсоток від загальної суми"
+                            }
+                        ],
+                        flatOrder: [
+                            {
+                                uniqueName: "quantity"
+                            },
+                            {
+                                uniqueName: "price"
+                            },
+                            {
+                                uniqueName: "total"
+                            },
+                            {
+                                uniqueName: "percentage"
+                            }
+                        ]
+                    },
+                    options: {
+                        grid: {
+                            type: "flat",
+                            showHeaders: true,
+                            showTotals: false,
+                            showGrandTotals: "off"
+                        }
+                    }
+                },
+                customizeCell: function(cell) {
+                    if (cell.type == "value" && cell.measure.uniqueName === "total") {
+                        const percentage = ((cell.value / totalSum) * 100).toFixed(2) + ' %';
+                        cell.text = cell.text + ' (' + percentage + ')';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

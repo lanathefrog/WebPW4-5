@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Pizza</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" href="assets/images/home-icon.png">
+</head>
+<body style="background-color: rgb(245, 241, 228);">
+    <div id="cart">
+        <div id="cart-top-pannel">
+            <div id="cart-name">
+                <span id="cart-label">Замовлення</span>
+                <span id="cart-number">0</span>
+            </div>
+            <div id="clear">Очистити замовлення</div>
+        </div>
+        <div id="cart-main-content"></div>
+        <div id="cart-bottom-pannel">
+            <div id="cart-total">
+                <div id="total-label">Сума замовлення</div>
+                <div id="total-price">0 грн</div>
+            </div>
+            <button class="button">Замовити</button>
+        </div>
+    </div>
+    <div id="notification-panel" class="hidden">
+        <div id="notification-content">
+            <p>Замовлення зроблено успішно! Дякуємо.</p>
+        </div>
+    </div>
+    
+    <div id="main-content"> 
+        <header>
+            <div class="logo">
+                <div id="label">KMA Pizza</div>
+                <img src="assets/images/discount.svg" id="label-3" alt="">
+            </div>
+            <div class="left-side-header">
+                <div id="header-top"> 
+                    <div id="text-top-header">
+                        <span id="number">(044) 222 5 222</span>
+                        <span id="schedule">24 години / 7 днів на тиждень</span>
+                        <span id="dostavka">Безкоштовна достака піци</span>
+                    </div>
+                    <button class="button">Ввійти</button>
+                </div>
+                <hr>
+                <div id="header-bottom">
+                    <div id="text-bottom-header">Піца</div>
+                    <button class="button">Ввійти</button>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div id="content-name"><b><span id="pizzas">Усі піци</span></b><span id="quantity-main">8</span></div>
+            <div class="tabs">
+                <button class="tab" data-category="all">Усі</button>
+                <button class="tab" data-category="М’ясна піца">М'ясні</button>
+                <button class="tab" data-category="З ананасами">З ананасами</button>
+                <button class="tab" data-category="Морська піца">З порепродуктами</button>
+                <button class="tab" data-category="Вега піца">Вега</button>
+            </div>
+            <div class="pizzas"></div>
+        </div>
+        <footer>
+            <div id="text-in-footer">
+                Pizza.24 — практичний проект з вивчення основ веб-розробки. Всі права захищені. Доставка піци не здійснюється. 
+                <a href="report.html" target="_blank">Відкрити звіт</a>
+            </div>
+
+        </footer>
+        <div class="badge">
+            <div class="label">ЦЬОГО ТИЖНЯ НА ВСЕ</div>
+            <div id="discount">-20%</div>
+            <img src="assets/images/discount.svg" id="label-3-bottom">
+        </div>
+    </div>
+   
+    <script src="main.js"></script>
+    
+</body>
+</html>
